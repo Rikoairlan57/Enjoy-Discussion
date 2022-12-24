@@ -1,7 +1,7 @@
 function App() {
   return (
-    <div className="App">
-      <h1>Stater page</h1>
+    <div>
+      <h1 className="text-center text-3xl font-bold underline">Stater page</h1>
     </div>
   );
 }
