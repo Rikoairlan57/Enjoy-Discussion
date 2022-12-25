@@ -1,25 +1,4 @@
-export const showFormattedDate = (date) => {
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-
-  return new Date(date).toLocaleDateString("id-ID", options);
-};
-
-export const createCategoryList = (threads) => {
-  const list = new Set();
-
-  threads.forEach((thread) => {
-    list.add(thread.category);
-  });
-
-  return Array.from(list);
-};
-
-export const showHistoryPostDate = (date) => {
+function postedAt(date) {
   const now = new Date();
   const posted = new Date(date);
   const diff = now - posted;
@@ -41,4 +20,17 @@ export const showHistoryPostDate = (date) => {
     return `${diffSeconds} seconds ago`;
   }
   return "just now";
-};
+}
+
+function allCategoryThreads(threads) {
+  const categories = new Set();
+
+  threads.map((thread) => {
+    categories.add(thread.category);
+  });
+
+  return [...categories];
+}
+
+export { postedAt, allCategoryThreads };
+export * from "./network-data";
