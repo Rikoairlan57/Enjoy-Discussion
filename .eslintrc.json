@@ -21,6 +21,9 @@
     "react/function-component-definition": "off",
     "no-underscore-dangle": "off",
     "import/export": "off",
-    "array-callback-return": "off"
+    "array-callback-return": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "import/order": "off"
   }
 }
