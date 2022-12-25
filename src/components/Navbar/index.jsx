@@ -3,8 +3,11 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-function NavBar() {
+function NavBar({ authUser, signOut }) {
+  const { id, name, avatar } = authUser;
+
   const [navbar, setNavbar] = useState(false);
   return (
     <nav className="w-full bg-white shadow">
@@ -79,13 +82,17 @@ function NavBar() {
                   </Link>
                 </li>
                 <li>
-                  <div className="py-4 px-4 font-semibold  rounded-md">
-                    RikoAirlan
-                  </div>
+                  <img
+                    src={avatar}
+                    alt={id}
+                    title={name}
+                    className="w-12 h-12 rounded-full bg-blue-100"
+                  />
                 </li>
                 <li className="text-gray-600 hover:text-blue-600">
                   <button
                     type="button"
+                    onClick={signOut}
                     className="py-4 px-4 font-semibold hover:bg-yellow-600 hover:text-white rounded-md"
                   >
                     Logout
@@ -99,5 +106,16 @@ function NavBar() {
     </nav>
   );
 }
+
+const authUserShape = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+};
+
+NavBar.propTypes = {
+  authUser: PropTypes.shape(authUserShape).isRequired,
+  signOut: PropTypes.func.isRequired,
+};
 
 export default NavBar;
