@@ -15,6 +15,7 @@
     "react/jsx-filename-extension": "off",
     "quotes": "off",
     "react/react-in-jsx-scope": "off",
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+    "implicit-arrow-linebreak": "off"
   }
 }
