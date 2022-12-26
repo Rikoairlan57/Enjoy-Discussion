@@ -13,20 +13,27 @@ function InputRegister({ register }) {
         value={name}
         onChange={onNameChange}
         placeholder="Name"
+        className=" w-full border relative bg-gray-100 p-2 my-4"
       />
       <input
         type="email"
         value={email}
         onChange={onEmailChange}
         placeholder="Email"
+        className=" w-full border relative bg-gray-100 p-2 my-4"
       />
       <input
         type="password"
         value={password}
         onChange={onPasswordChange}
         placeholder="Password"
+        className=" w-full border relative bg-gray-100 p-2 my-4"
       />
-      <button type="button" onClick={() => register({ name, email, password })}>
+      <button
+        className="w-full py-2 my-4 bg-green-600 hover:bg-green-500"
+        type="button"
+        onClick={() => register({ name, email, password })}
+      >
         Register
       </button>
     </form>
