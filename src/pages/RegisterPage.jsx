@@ -25,7 +25,6 @@ function RegisterPage() {
         <p>
           Already have an account?
           <Link to="/login" style={{ color: "yellow", textDecoration: "none" }}>
-            {" "}
             Login
           </Link>
         </p>
