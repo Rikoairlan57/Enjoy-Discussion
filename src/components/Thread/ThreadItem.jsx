@@ -44,7 +44,7 @@ function ThreadItem({
           </Link>
         </div>
         <div>
-          <header>
+          <header className="my-3">
             <div className="flex flex-col ">
               <div className="flex justify-between">
                 <div className="flex items-center justify-start mt-3 space-x-3">
@@ -54,21 +54,21 @@ function ThreadItem({
                     className="w-18 h-18 rounded-full"
                   />
                   <div>
-                    <span>{user.name}</span>
+                    <span className="text-xl font-bold">{user.name}</span>
                     <span className="flex justify-start text-gray-500">
                       {postedAt(createdAt)}
                     </span>
                   </div>
                 </div>
                 <div className="flex items-center justify-end">
-                  <p className="px-2 py-1 bg-yellow-500 text-white rounded-md">
+                  <p className="px-2 py-1 font-bold bg-yellow-500 text-white rounded-md">
                     #{category}
                   </p>
                 </div>
               </div>
             </div>
           </header>
-          <article>
+          <article className="text-xl">
             <p
               dangerouslySetInnerHTML={{
                 __html: `${body.substring(0, 200)}.....`,
@@ -76,16 +76,12 @@ function ThreadItem({
             />
           </article>
           <hr />
-          <div>
+          <div className="flex flex-row">
             {upVote && (
-              <div>
+              <div className="mx-3 py-3">
                 <p>
                   <button type="button" onClick={onUpVoteThread}>
-                    {isUpVoted ? (
-                      <AiFillLike style={{ color: "#46459E" }} />
-                    ) : (
-                      <AiFillLike />
-                    )}
+                    {isUpVoted ? <AiFillLike fill="#ca8a04" /> : <AiFillLike />}
                   </button>
                   {upVotesBy.length}
                 </p>
@@ -93,11 +89,11 @@ function ThreadItem({
             )}
 
             {downVote && (
-              <div>
+              <div className="mx-3 py-3">
                 <p>
                   <button type="button" onClick={onDownVoteThread}>
                     {isDownVoted ? (
-                      <AiFillDislike style={{ color: "red" }} />
+                      <AiFillDislike fill="#ca8a04" />
                     ) : (
                       <AiFillDislike />
                     )}
@@ -106,10 +102,10 @@ function ThreadItem({
                 </p>
               </div>
             )}
-
-            <p>
-              <AiOutlineComment /> {totalComments}
-            </p>
+            <div className="mx-3 py-3 flex flex-row">
+              <AiOutlineComment />
+              <p>{totalComments}</p>
+            </div>
           </div>
         </div>
       </div>
