@@ -10,11 +10,7 @@ function CategoryItem({ category, onCategoryHandler }) {
       onClick={() => {
         onCategoryHandler(category);
       }}
-      className={`border border-yellow-500 text-yellow-600  rounded-xl px-3 ${
-        category === category
-          ? "bg-yellow-500 text-white"
-          : "hover:bg-yellow-400/25"
-      }`}
+      className="px-2 py-1 my-5 mx-2 bg-yellow-500 hover:bg-yellow-600 text-white rounded-md"
     >
       #{category}
     </button>
