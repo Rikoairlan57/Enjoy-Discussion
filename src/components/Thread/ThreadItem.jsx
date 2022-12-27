@@ -38,73 +38,77 @@ function ThreadItem({
        rounded-xl hover:shadow-none hover:border-2"
     >
       <div className="ml-5">
-        <div className="text-2xl font-bold cursor-pointer hover:text-yellow-500">
+        <div className="text-4xl font-bold cursor-pointer hover:text-yellow-500">
           <Link to={`/threads/${id}`} style={{ textDecoration: "none" }}>
-            <h3>{title}</h3>
+            <h2>{title}</h2>
           </Link>
         </div>
-      </div>
-      <div>
-        <header>
-          <div>
-            <div className="flex items-center justify-start mt-3 space-x-3">
-              <img
-                src={user.avatar}
-                alt={user.name}
-                className="w-12 h-12 rounded-full"
-              />
-            </div>
-            <div>
-              <p>{user.name}</p>
-              <p>{postedAt(createdAt)}</p>
-            </div>
-          </div>
-          <div>
-            <p>#{category}</p>
-          </div>
-        </header>
-        <article>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: `${body.substring(0, 200)}.....`,
-            }}
-          />
-        </article>
-        <hr />
         <div>
-          {upVote && (
-            <div>
-              <p>
-                <button type="button" onClick={onUpVoteThread}>
-                  {isUpVoted ? (
-                    <AiFillLike style={{ color: "#46459E" }} />
-                  ) : (
-                    <AiFillLike />
-                  )}
-                </button>
-                {upVotesBy.length}
-              </p>
+          <header>
+            <div className="flex justify-start">
+              <div className="flex flex-col">
+                <div className="flex items-center justify-end mt-3 space-x-3">
+                  <img
+                    src={user.avatar}
+                    alt={user.name}
+                    className="w-18 h-18 rounded-full"
+                  />
+                  <div>
+                    <span>{user.name}</span>
+                    <span className="flex justify-start text-gray-500">
+                      {postedAt(createdAt)}
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
-          )}
-
-          {downVote && (
             <div>
-              <p>
-                <button type="button" onClick={onDownVoteThread}>
-                  {isDownVoted ? (
-                    <AiFillDislike style={{ color: "red" }} />
-                  ) : (
-                    <AiFillDislike />
-                  )}
-                </button>
-                {downVotesBy.length}
-              </p>
+              <p>#{category}</p>
             </div>
-          )}
+          </header>
+          <article>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: `${body.substring(0, 200)}.....`,
+              }}
+            />
+          </article>
+          <hr />
+          <div>
+            {upVote && (
+              <div>
+                <p>
+                  <button type="button" onClick={onUpVoteThread}>
+                    {isUpVoted ? (
+                      <AiFillLike style={{ color: "#46459E" }} />
+                    ) : (
+                      <AiFillLike />
+                    )}
+                  </button>
+                  {upVotesBy.length}
+                </p>
+              </div>
+            )}
 
-          <p>
-            <AiOutlineComment /> {totalComments}
-          </p>
+            {downVote && (
+              <div>
+                <p>
+                  <button type="button" onClick={onDownVoteThread}>
+                    {isDownVoted ? (
+                      <AiFillDislike style={{ color: "red" }} />
+                    ) : (
+                      <AiFillDislike />
+                    )}
+                  </button>
+                  {downVotesBy.length}
+                </p>
+              </div>
+            )}
+
+            <p>
+              <AiOutlineComment /> {totalComments}
+            </p>
+          </div>
         </div>
       </div>
     </div>
