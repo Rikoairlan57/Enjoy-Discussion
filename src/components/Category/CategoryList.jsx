@@ -5,7 +5,7 @@ import ThreadCategoryItem from "./CategoryItem";
 function CategoryList({ categories, onCategoryHandler }) {
   return (
     <div>
-      <h2>Popular Category</h2>
+      <h2 className="text-3xl font-bold mx-2">Category Discussion</h2>
       {categories.map((category) => (
         <ThreadCategoryItem
           key={category}
