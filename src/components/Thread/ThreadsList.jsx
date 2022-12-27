@@ -5,7 +5,7 @@ import ThreadItem, { threadItemShape } from "./ThreadItem";
 
 function ThreadsList({ threads, upVote, downVote }) {
   return (
-    <div className="threads-list">
+    <div>
       {threads.map((thread) => (
         <ThreadItem
           key={thread.id}

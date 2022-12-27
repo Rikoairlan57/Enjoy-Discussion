@@ -33,17 +33,26 @@ function ThreadItem({
   };
 
   return (
-    <div>
-      <div>
-        <Link to={`/threads/${id}`} style={{ textDecoration: "none" }}>
-          <h3>{title}</h3>
-        </Link>
+    <div
+      className="mb-5 p-5 border-2 shadow-[0_6px_6px_0_rgba(0,0,0,0.2)]
+       rounded-xl hover:shadow-none hover:border-2"
+    >
+      <div className="ml-5">
+        <div className="text-2xl font-bold cursor-pointer hover:text-yellow-500">
+          <Link to={`/threads/${id}`} style={{ textDecoration: "none" }}>
+            <h3>{title}</h3>
+          </Link>
+        </div>
       </div>
       <div>
         <header>
           <div>
-            <div>
-              <img src={user.avatar} alt={user.name} />
+            <div className="flex items-center justify-start mt-3 space-x-3">
+              <img
+                src={user.avatar}
+                alt={user.name}
+                className="w-12 h-12 rounded-full"
+              />
             </div>
             <div>
               <p>{user.name}</p>
