@@ -4,6 +4,7 @@ import authUserReducer from "./authUser/reducer";
 import isPreloadReducer from "./isPreload/reducer";
 import threadReducer from "./thread/reducer";
 import categoryReducer from "./category/reducer";
+import threadDetailReducer from "./ThreadDetail/reducer";
 
 import usersReducer from "./users/reducer";
 
@@ -15,6 +16,7 @@ const store = configureStore({
     loadingBar: loadingBarReducer,
     isPreload: isPreloadReducer,
     category: categoryReducer,
+    threadDetail: threadDetailReducer,
   },
 });
 
