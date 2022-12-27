@@ -94,17 +94,19 @@ function HomePage() {
   }));
 
   return (
-    <section>
-      <CategoryList
-        categories={categoryList}
-        onCategoryHandler={onCategoryHandler}
-      />
-      <ThreadsList
-        threads={threadList}
-        upVote={onUpVote}
-        downVote={onDownVote}
-      />
-      <ThreadAddButton />
+    <section className="relative mx-5 sm:mx-10 md:mx-20 lg:mx-40">
+      <div id="scrollX" className="my-5 overflow-x-scroll rounded-xl py-3">
+        <CategoryList
+          categories={categoryList}
+          onCategoryHandler={onCategoryHandler}
+        />
+        <ThreadsList
+          threads={threadList}
+          upVote={onUpVote}
+          downVote={onDownVote}
+        />
+        <ThreadAddButton />
+      </div>
     </section>
   );
 }
