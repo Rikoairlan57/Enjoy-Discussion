@@ -1,8 +1,11 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable react/no-danger */
 import React from "react";
 import PropTypes from "prop-types";
 import { AiFillLike, AiFillDislike } from "react-icons/ai";
 import { postedAt } from "../../utils/index";
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function ThreadDetail({
   id,
@@ -19,54 +22,59 @@ function ThreadDetail({
 }) {
   const isUpVoted = upVotesBy.includes(authUser);
   const isDownVoted = downVotesBy.includes(authUser);
+  const navigate = useNavigate();
 
   return (
-    <section>
-      <div>
-        <h3>{title}</h3>
+    <section className="mx-5 sm:mx-10 md:mx-20 lg:mx-40">
+      <div className=" my-5 flex items-center">
+        <button
+          onClick={() => navigate(-1)}
+          className="text-xl hover:text-yellow-500"
+        >
+          <FaArrowLeft />
+        </button>
       </div>
-      <div>
+      <div className=" mb-5 p-5 border-2 rounded-xl">
         <header>
-          <div>
-            <div>
-              <img src={owner.avatar} alt={owner.name} />
+          <div className="flex justify-between items-center mb-5">
+            <div className="flex items-center justify-start space-x-3">
+              <img
+                src={owner.avatar}
+                alt={owner.name}
+                className="w-18 h-18 rounded-full"
+              />
+              <span className="text-xl font-bold">{owner.name}</span>
             </div>
-            <div>
-              <p>{owner.name}</p>
-              <p>{postedAt(createdAt)}</p>
-            </div>
+            <p className="flex justify-end  text-gray-500">
+              {postedAt(createdAt)}
+            </p>
           </div>
-          <div>
-            <p>#{category}</p>
-          </div>
+
+          <span className="px-2 py-1 font-bold bg-yellow-500 text-white rounded-md">
+            #{category}
+          </span>
+          <h2 className="my-3 font-bold text-xl">{title}</h2>
         </header>
-        <article>
+        <hr />
+        <article className="mb-3 py-3">
           <p dangerouslySetInnerHTML={{ __html: body }} />
         </article>
-        <div>
+        <div className="grid grid-cols-2 justify-items-center">
           <div>
-            <p>
-              <button type="button" onClick={() => upVoteThread(id)}>
-                {isUpVoted ? (
-                  <AiFillLike style={{ color: "#46459E" }} />
-                ) : (
-                  <AiFillLike />
-                )}
-              </button>
-              {upVotesBy.length}
-            </p>
+            <button type="button" onClick={() => upVoteThread(id)}>
+              {isUpVoted ? <AiFillLike fill="#ca8a04" /> : <AiFillLike />}
+            </button>
+            {upVotesBy.length}
           </div>
           <div>
-            <p>
-              <button type="button" onClick={() => downVoteThread(id)}>
-                {isDownVoted ? (
-                  <AiFillDislike style={{ color: "red" }} />
-                ) : (
-                  <AiFillDislike />
-                )}
-              </button>
-              {downVotesBy.length}
-            </p>
+            <button type="button" onClick={() => downVoteThread(id)}>
+              {isDownVoted ? (
+                <AiFillDislike fill="#ca8a04" />
+              ) : (
+                <AiFillDislike />
+              )}
+            </button>
+            {downVotesBy.length}
           </div>
         </div>
       </div>
