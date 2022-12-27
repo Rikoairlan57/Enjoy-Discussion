@@ -45,9 +45,9 @@ function ThreadItem({
         </div>
         <div>
           <header>
-            <div className="flex justify-start">
-              <div className="flex flex-col">
-                <div className="flex items-center justify-end mt-3 space-x-3">
+            <div className="flex flex-col ">
+              <div className="flex justify-between">
+                <div className="flex items-center justify-start mt-3 space-x-3">
                   <img
                     src={user.avatar}
                     alt={user.name}
@@ -60,10 +60,10 @@ function ThreadItem({
                     </span>
                   </div>
                 </div>
+                <div className="flex items-center justify-end">
+                  <p>#{category}</p>
+                </div>
               </div>
-            </div>
-            <div>
-              <p>#{category}</p>
             </div>
           </header>
           <article>
