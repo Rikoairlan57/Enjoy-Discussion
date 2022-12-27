@@ -61,7 +61,9 @@ function ThreadItem({
                   </div>
                 </div>
                 <div className="flex items-center justify-end">
-                  <p>#{category}</p>
+                  <p className="px-2 py-1 bg-yellow-500 text-white rounded-md">
+                    #{category}
+                  </p>
                 </div>
               </div>
             </div>
