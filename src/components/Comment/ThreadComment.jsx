@@ -15,7 +15,7 @@ function ThreadComment({ addComment }) {
 
   return (
     <div className="mx-5 sm:mx-10 md:mx-20 lg:mx-40">
-      <h3>New comment :</h3>
+      <h3 className="font-bold text-xl my-3">New comment :</h3>
       <form>
         <div
           data-testid="input-content"
