@@ -6,16 +6,18 @@ import ThreadCommentItem, { commentItemShape } from "./CommentItem";
 
 function CommentList({ comments, upVote, downVote }) {
   return (
-    <div>
-      <h3>Comment ({comments.length})</h3>
-      {comments.map((comment) => (
-        <ThreadCommentItem
-          key={comment.id}
-          {...comment}
-          upVote={upVote}
-          downVote={downVote}
-        />
-      ))}
+    <div className="mx-5 sm:mx-10 md:mx-20 lg:mx-40">
+      <div className="p-5 mb-5 border-2 rounded-xl">
+        <h3>Comment ({comments.length})</h3>
+        {comments.map((comment) => (
+          <ThreadCommentItem
+            key={comment.id}
+            {...comment}
+            upVote={upVote}
+            downVote={downVote}
+          />
+        ))}
+      </div>
     </div>
   );
 }
