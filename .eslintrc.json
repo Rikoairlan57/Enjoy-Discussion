@@ -24,6 +24,7 @@
     "array-callback-return": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-no-useless-fragment": "off",
-    "import/order": "off"
+    "import/order": "off",
+    "react/jsx-props-no-spreading": "off"
   }
 }
