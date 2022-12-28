@@ -7,7 +7,7 @@ import { postedAt } from "../../utils/index";
 import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-function ThreadDetail({
+const ThreadDetail = ({
   id,
   authUser,
   title,
@@ -19,7 +19,7 @@ function ThreadDetail({
   downVotesBy,
   upVoteThread,
   downVoteThread,
-}) {
+}) => {
   const isUpVoted = upVotesBy.includes(authUser);
   const isDownVoted = downVotesBy.includes(authUser);
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ function ThreadDetail({
       <div className=" my-5 flex items-center">
         <button
           onClick={() => navigate(-1)}
-          className="text-xl hover:text-yellow-500"
+          className="text-xl hover:text-red-500"
         >
           <FaArrowLeft />
         </button>
@@ -50,7 +50,7 @@ function ThreadDetail({
             </p>
           </div>
 
-          <span className="px-2 py-1 font-bold bg-yellow-500 text-white rounded-md">
+          <span className="px-2 py-1 font-bold bg-blue-500 text-white rounded-md">
             #{category}
           </span>
           <h2 className="my-3 font-bold text-xl">{title}</h2>
@@ -80,7 +80,7 @@ function ThreadDetail({
       </div>
     </section>
   );
-}
+};
 
 const ownerShape = {
   id: PropTypes.string.isRequired,

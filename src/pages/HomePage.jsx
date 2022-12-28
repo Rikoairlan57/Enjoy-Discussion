@@ -12,7 +12,7 @@ import {
   asyncToggleUpVoteThread,
 } from "../states/thread/action";
 
-function HomePage() {
+const HomePage = () => {
   const {
     threads = [],
     users = [],
@@ -100,6 +100,7 @@ function HomePage() {
           categories={categoryList}
           onCategoryHandler={onCategoryHandler}
         />
+        <hr />
         <ThreadsList
           threads={threadList}
           upVote={onUpVote}
@@ -109,6 +110,6 @@ function HomePage() {
       </div>
     </section>
   );
-}
+};
 
 export default HomePage;

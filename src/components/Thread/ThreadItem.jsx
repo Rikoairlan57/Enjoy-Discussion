@@ -5,7 +5,7 @@ import { AiFillLike, AiFillDislike, AiOutlineComment } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { postedAt } from "../../utils/index";
 
-function ThreadItem({
+const ThreadItem = ({
   id,
   title,
   body,
@@ -18,7 +18,7 @@ function ThreadItem({
   upVote,
   downVote,
   user,
-}) {
+}) => {
   const isUpVoted = upVotesBy.includes(authUser);
   const isDownVoted = downVotesBy.includes(authUser);
 
@@ -38,7 +38,7 @@ function ThreadItem({
        rounded-xl hover:shadow-none hover:border-2"
     >
       <div className="ml-5">
-        <div className="text-4xl font-bold cursor-pointer hover:text-yellow-500">
+        <div className="text-4xl font-bold cursor-pointer hover:text-red-500">
           <Link to={`/threads/${id}`} style={{ textDecoration: "none" }}>
             <h2>{title}</h2>
           </Link>
@@ -61,7 +61,7 @@ function ThreadItem({
                   </div>
                 </div>
                 <div className="flex items-center justify-end">
-                  <p className="px-2 py-1 font-bold bg-yellow-500 text-white rounded-md">
+                  <p className="px-2 py-1 font-bold  bg-blue-500 text-white rounded-md">
                     #{category}
                   </p>
                 </div>
@@ -111,7 +111,7 @@ function ThreadItem({
       </div>
     </div>
   );
-}
+};
 
 const userShape = {
   id: PropTypes.string.isRequired,

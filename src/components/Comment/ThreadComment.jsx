@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-function ThreadComment({ addComment }) {
+const ThreadComment = ({ addComment }) => {
   const [content, setContent] = useState("");
 
   const onAddComment = () => {
@@ -27,7 +27,7 @@ function ThreadComment({ addComment }) {
         />
         <button
           type="submit"
-          className="bg-yellow-500 text-white px-3 py-2 mb-4 rounded-xl hover:bg-yellow-600"
+          className="bg-green-500 text-white px-3 py-2 mb-4 rounded-xl hover:bg-green-600"
           onClick={onAddComment}
         >
           Comment
@@ -35,7 +35,7 @@ function ThreadComment({ addComment }) {
       </form>
     </div>
   );
-}
+};
 
 ThreadComment.propTypes = {
   addComment: PropTypes.func.isRequired,

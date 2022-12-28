@@ -9,7 +9,7 @@ const ThreadAddButton = () => {
         <Link to="/add">
           <button
             type="button"
-            className="w-12 h-12 bg-yellow-500 dark:bg-green-dark hover:bg-yellow-600 rounded-2xl cursor-pointer shadow-[0_6px_6px_0_rgba(0,0,0,0.2)] hover:shadow-none"
+            className="w-12 h-12 bg-green-500 dark:bg-green-dark hover:bg-green-600 rounded-2xl cursor-pointer shadow-[0_6px_6px_0_rgba(0,0,0,0.2)] hover:shadow-none"
           >
             <span className="text-white flex justify-center">
               <FaPlus />

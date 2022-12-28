@@ -3,9 +3,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import ThreadItem, { threadItemShape } from "./ThreadItem";
 
-function ThreadsList({ threads, upVote, downVote }) {
+const ThreadsList = ({ threads, upVote, downVote }) => {
   return (
-    <div>
+    <div className="mt-5">
       {threads.map((thread) => (
         <ThreadItem
           key={thread.id}
@@ -16,7 +16,7 @@ function ThreadsList({ threads, upVote, downVote }) {
       ))}
     </div>
   );
-}
+};
 
 ThreadsList.propTypes = {
   threads: PropTypes.arrayOf(PropTypes.shape(threadItemShape)).isRequired,

@@ -5,7 +5,7 @@ import LoginInput from "../components/InputComponents/InputLogin";
 import { asyncSetAuthUser } from "../states/authUser/action";
 import login from "../assets/login.webp";
 
-function LoginPage() {
+const LoginPage = () => {
   const dispatch = useDispatch();
 
   const onLogin = ({ email, password }) => {
@@ -38,6 +38,6 @@ function LoginPage() {
       </article>
     </section>
   );
-}
+};
 
 export default LoginPage;
