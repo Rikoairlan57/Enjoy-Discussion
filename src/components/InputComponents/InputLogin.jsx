@@ -25,7 +25,7 @@ const InputLogin = ({ login }) => {
       <button
         type="button"
         onClick={() => login({ email, password })}
-        className="w-full py-2 my-4 bg-green-600 hover:bg-green-500"
+        className="w-full py-2 my-4 text-white bg-green-600 hover:bg-green-500"
       >
         Login
       </button>

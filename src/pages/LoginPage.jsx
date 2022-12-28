@@ -20,16 +20,13 @@ const LoginPage = () => {
         </div>
         <div className="flex justify-center items-center h-full">
           <form className="max-w-[400px] w-full mx-auto bg-white p-8">
-            <h2 className="text-center text-4xl font-bold py-4 text-yellow-600">
-              Enjoy<span className="text-yellow-500"> Discussion</span>
-            </h2>
+            <h1 className="text-4xl font-bold text-blue-500">
+              Enjoy<span className="text-green-500">Discussion</span>
+            </h1>
             <LoginInput login={onLogin} />
             <p className="text-center">
               Don&apos;t have an account?
-              <Link
-                to="/register"
-                style={{ color: "red", textDecoration: "none" }}
-              >
+              <Link to="/register" className="text-red-500">
                 Register
               </Link>
             </p>

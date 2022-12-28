@@ -9,7 +9,7 @@ import DetailThreadPage from "./pages/DetailThreadPage";
 import Leaderboard from "./pages/Leaderboard";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
-import PageNotFound from "./pages/PageNotFound";
+
 import { asyncUnsetAuthUser } from "./states/authUser/action";
 import { asyncPreloadProcess } from "./states/isPreload/action";
 
@@ -54,11 +54,10 @@ function App() {
         </header>
         <main>
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/*" element={<HomePage />} />
             <Route path="/add" element={<AddThreadPage />} />
             <Route path="/threads/:id" element={<DetailThreadPage />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
-            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </main>
       </div>

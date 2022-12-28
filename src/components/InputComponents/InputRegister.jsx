@@ -30,7 +30,7 @@ const InputRegister = ({ register }) => {
         className=" w-full border relative bg-gray-100 p-2 my-4"
       />
       <button
-        className="w-full py-2 my-4 bg-green-600 hover:bg-green-500"
+        className="w-full py-2 my-4 text-white bg-green-600 hover:bg-green-500"
         type="button"
         onClick={() => register({ name, email, password })}
       >

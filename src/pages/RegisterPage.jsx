@@ -23,16 +23,13 @@ const RegisterPage = () => {
         </div>
         <div className="flex justify-center items-center h-full">
           <form className="max-w-[400px] w-full mx-auto bg-white p-8">
-            <h2 className="text-center text-4xl font-bold py-4 text-yellow-600">
-              Enjoy<span className="text-yellow-500"> Discussion</span>
-            </h2>
+            <h1 className="text-4xl font-bold text-blue-500">
+              Enjoy<span className="text-green-500">Discussion</span>
+            </h1>
             <InputRegister register={onRegister} />
             <p className="text-center">
               Already have an account?
-              <Link
-                to="/login"
-                style={{ color: "red", textDecoration: "none" }}
-              >
+              <Link to="/login" className="text-red-500">
                 Login
               </Link>
             </p>
