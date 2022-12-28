@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import LoginInput from "../components/InputComponents/InputLogin";
 import { asyncSetAuthUser } from "../states/authUser/action";
-import login from "../assets/login.jpg";
+import login from "../assets/login.webp";
 
 function LoginPage() {
   const dispatch = useDispatch();

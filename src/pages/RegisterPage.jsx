@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import InputRegister from "../components/InputComponents/InputRegister";
 import { asyncRegisterUser } from "../states/users/action";
-import login from "../assets/login.jpg";
+import login from "../assets/login.webp";
 
 function RegisterPage() {
   const navigate = useNavigate();
