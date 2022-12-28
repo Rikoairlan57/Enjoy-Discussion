@@ -29,20 +29,24 @@ function CommentItem({
 
   return (
     <>
-      <div className="comment-item">
+      <div>
         <header>
-          <div className="comment-item__header">
-            <div className="comment-item__owner-info">
-              <img src={owner.avatar} alt={owner.name} />
-              <p>{owner.name}</p>
+          <div className="flex justify-between items-center">
+            <div className="flex items-center justify-start mt-3 space-x-3">
+              <img
+                src={owner.avatar}
+                alt={owner.name}
+                className="w-12 h-12 rounded-full"
+              />
+              <span>{owner.name}</span>
             </div>
-            <p className="posted-at">{postedAt(createdAt)}</p>
+            <p className="flex justify-end">{postedAt(createdAt)}</p>
           </div>
         </header>
-        <p className="comment-item__content">{content}</p>
-        <div className="comment-item__footer">
+        <p>{content}</p>
+        <div className="flex space-x-5">
           {upVote && (
-            <div className="comment-item__upvotes">
+            <div>
               <p>
                 <button type="button" onClick={onUpVoteComment}>
                   {isUpVoted ? (
@@ -56,7 +60,7 @@ function CommentItem({
             </div>
           )}
           {downVote && (
-            <div className="comment-item__downvotes">
+            <div>
               <p>
                 <button type="button" onClick={onDownVoteComment}>
                   {isDownVoted ? (
