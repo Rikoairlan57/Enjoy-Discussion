@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function CategoryItem({ category, onCategoryHandler }) {
+const CategoryItem = ({ category, onCategoryHandler }) => {
   return (
     <button
       key={category}
@@ -10,12 +10,12 @@ function CategoryItem({ category, onCategoryHandler }) {
       onClick={() => {
         onCategoryHandler(category);
       }}
-      className="px-2 py-1 my-5 mx-2 bg-yellow-500 hover:bg-yellow-600 text-white rounded-md"
+      className="px-2 py-1 my-5 mx-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md"
     >
       #{category}
     </button>
   );
-}
+};
 
 CategoryItem.propTypes = {
   category: PropTypes.string.isRequired,

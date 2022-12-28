@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import ThreadCommentItem, { commentItemShape } from "./CommentItem";
 
-function CommentList({ comments, upVote, downVote }) {
+const CommentList = ({ comments, upVote, downVote }) => {
   return (
     <div className="mx-5 sm:mx-10 md:mx-20 lg:mx-40">
       <div className="p-5 mb-5 border-2 rounded-xl">
@@ -19,7 +19,7 @@ function CommentList({ comments, upVote, downVote }) {
       </div>
     </div>
   );
-}
+};
 
 CommentList.propTypes = {
   comments: PropTypes.arrayOf(PropTypes.shape(commentItemShape)).isRequired,

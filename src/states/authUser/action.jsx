@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { hideLoading, showLoading } from "react-redux-loading-bar";
 import NetworkData from "../../utils/network-data";
 

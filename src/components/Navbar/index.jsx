@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function NavBar({ authUser, signOut }) {
+const NavBar = ({ authUser, signOut }) => {
   const { id, name, avatar } = authUser;
 
   const [navbar, setNavbar] = useState(false);
@@ -14,9 +14,11 @@ function NavBar({ authUser, signOut }) {
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <h2 className="text-2xl font-bold text-yellow-600">
-              Enjoy<span className="text-yellow-500">Discussion</span>
-            </h2>
+            <Link to="/">
+              <h1 className="text-4xl font-bold text-blue-500">
+                Enjoy<span className="text-green-500">Discussion</span>
+              </h1>
+            </Link>
             <div className="md:hidden">
               <button
                 type="button"
@@ -68,7 +70,7 @@ function NavBar({ authUser, signOut }) {
                 <li className="text-gray-600 hover:text-blue-600">
                   <Link
                     to="/"
-                    className="py-4 px-4 font-semibold hover:bg-yellow-600 hover:text-white rounded-md"
+                    className="py-4 px-4 font-semibold hover:bg-green-600 hover:text-white rounded-md"
                   >
                     Home
                   </Link>
@@ -76,7 +78,7 @@ function NavBar({ authUser, signOut }) {
                 <li className="text-gray-600 hover:text-blue-600">
                   <Link
                     to="/leaderboard"
-                    className="py-4 px-4 font-semibold hover:bg-yellow-600 hover:text-white rounded-md"
+                    className="py-4 px-4 font-semibold hover:bg-green-600 hover:text-white rounded-md"
                   >
                     Leaderboard
                   </Link>
@@ -93,7 +95,7 @@ function NavBar({ authUser, signOut }) {
                   <button
                     type="button"
                     onClick={signOut}
-                    className="py-4 px-4 font-semibold hover:bg-yellow-600 hover:text-white rounded-md"
+                    className="py-4 px-4 font-semibold hover:bg-green-600 hover:text-white rounded-md"
                   >
                     Logout
                   </button>
@@ -105,7 +107,7 @@ function NavBar({ authUser, signOut }) {
       </div>
     </nav>
   );
-}
+};
 
 const authUserShape = {
   id: PropTypes.string.isRequired,

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { AiFillLike, AiFillDislike } from "react-icons/ai";
 import { postedAt } from "../../utils/index";
 
-function CommentItem({
+const CommentItem = ({
   id,
   owner,
   createdAt,
@@ -13,7 +13,7 @@ function CommentItem({
   upVote,
   downVote,
   authUser,
-}) {
+}) => {
   const isUpVoted = upVotesBy.includes(authUser.id);
   const isDownVoted = downVotesBy.includes(authUser.id);
 
@@ -40,10 +40,12 @@ function CommentItem({
               />
               <span>{owner.name}</span>
             </div>
-            <p className="flex justify-end">{postedAt(createdAt)}</p>
+            <p className="flex justify-end text-gray-500">
+              {postedAt(createdAt)}
+            </p>
           </div>
         </header>
-        <p>{content}</p>
+        <p className="my-3">{content}</p>
         <div className="flex space-x-5">
           {upVote && (
             <div>
@@ -78,7 +80,7 @@ function CommentItem({
       <hr />
     </>
   );
-}
+};
 
 const ownerShape = {
   id: PropTypes.string.isRequired,

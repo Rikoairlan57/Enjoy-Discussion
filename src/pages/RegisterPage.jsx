@@ -5,7 +5,7 @@ import InputRegister from "../components/InputComponents/InputRegister";
 import { asyncRegisterUser } from "../states/users/action";
 import login from "../assets/login.webp";
 
-function RegisterPage() {
+const RegisterPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -41,6 +41,6 @@ function RegisterPage() {
       </article>
     </section>
   );
-}
+};
 
 export default RegisterPage;
