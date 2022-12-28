@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import LeaderboardList from "../components/Leaderboard/LeaderboardList";
+import { asyncGetLeaderboards } from "../states/leaderboard/action";
 
 const Leaderboard = () => {
+  const { leaderboards = [], users = [] } = useSelector((states) => states);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(asyncGetLeaderboards());
+  }, [dispatch]);
+
+  const leaderboardsList = leaderboards.map((leaderboard) => ({
+    ...leaderboard,
+    users: users.find((user) => user.id === users.id),
+  }));
+
   return (
     <div>
-      <h1>Leaderboard</h1>
+      <h2>Standings active user</h2>
+      <LeaderboardList leaderboards={leaderboardsList} />
     </div>
   );
 };

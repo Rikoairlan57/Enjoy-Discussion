@@ -5,6 +5,7 @@ import isPreloadReducer from "./isPreload/reducer";
 import threadReducer from "./thread/reducer";
 import categoryReducer from "./category/reducer";
 import threadDetailReducer from "./ThreadDetail/reducer";
+import leaderboardsReducer from "./leaderboard/reducer";
 
 import usersReducer from "./users/reducer";
 
@@ -17,6 +18,7 @@ const store = configureStore({
     isPreload: isPreloadReducer,
     category: categoryReducer,
     threadDetail: threadDetailReducer,
+    leaderboards: leaderboardsReducer,
   },
 });
 
