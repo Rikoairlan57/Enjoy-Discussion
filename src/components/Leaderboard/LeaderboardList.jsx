@@ -6,12 +6,9 @@ import LeaderboardItem, { leaderboardItemShape } from "./LeaderboardItem";
 
 const LeaderboardList = ({ leaderboards }) => {
   return (
-    <div>
-      <div>
-        <header>
-          <p>Users</p>
-          <p>Score</p>
-        </header>
+    <div className="mx-5 sm:mx-10 md:mx-20 lg:mx-40">
+      <div className=" mt-5">
+        <h2 className="font-bold text-xl mb-5">Top active user</h2>
         <div>
           {leaderboards.map((leaderboard, index) => (
             <LeaderboardItem key={index} {...leaderboard} />
