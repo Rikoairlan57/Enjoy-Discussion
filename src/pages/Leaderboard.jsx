@@ -18,7 +18,6 @@ const Leaderboard = () => {
 
   return (
     <div>
-      <h2>Standings active user</h2>
       <LeaderboardList leaderboards={leaderboardsList} />
     </div>
   );
