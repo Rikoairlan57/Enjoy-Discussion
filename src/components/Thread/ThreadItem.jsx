@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { AiFillLike, AiFillDislike, AiOutlineComment } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { postedAt } from "../../utils/index";
+// import AOS from "aos";
 
 const ThreadItem = ({
   id,
@@ -31,6 +32,11 @@ const ThreadItem = ({
     event.stopPropagation();
     downVote(id);
   };
+  // useEffect(() => {
+  //   AOS.init({
+  //     duration: 2000,
+  //   });
+  // }, []);
 
   return (
     <div

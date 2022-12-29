@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import NetworkData from "../../utils/network-data";
 
 const ActionType = {
