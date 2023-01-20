@@ -1,9 +1,17 @@
+// - scenario testing e2e login
+
+// - correctly displays the login page
+// - displays an alert when the email input is empty
+// - displays an alert when the password input is empty
+// - displays an alert when email and password are wrong
+// - should display the homepage if the email input and password input have been entered correctly
+
 describe("Login spec", () => {
   beforeEach(() => {
     cy.visit("http://localhost:3000/");
   });
 
-  it("should display login page correctly", () => {
+  it("correctly displays the login page", () => {
     cy.get('input[placeholder="Email"]').should("be.visible");
     cy.get('input[placeholder="Password"]').should("be.visible");
     cy.get("button")
@@ -11,7 +19,7 @@ describe("Login spec", () => {
       .should("be.visible");
   });
 
-  it("should display alert when email is empty", () => {
+  it("displays an alert when the email input is empty", () => {
     cy.get("button")
       .contains(/^Login$/)
       .click();
@@ -21,7 +29,7 @@ describe("Login spec", () => {
     });
   });
 
-  it("should display alert when password is empty", () => {
+  it("displays an alert when the password input is empty", () => {
     cy.get('input[placeholder="Email"]').type("test@email.com");
 
     cy.get("button")
@@ -33,7 +41,7 @@ describe("Login spec", () => {
     });
   });
 
-  it("should display alert when Email and password are wrong", () => {
+  it("displays an alert when email and password are wrong", () => {
     cy.get('input[placeholder="Email"]').type("test@email.com");
 
     cy.get('input[placeholder="Password"]').type("wrong_password");
@@ -47,7 +55,7 @@ describe("Login spec", () => {
     });
   });
 
-  it("should display homepage when Email and password are correct", () => {
+  it("should display the homepage if the email input and password input have been entered correctly", () => {
     cy.get('input[placeholder="Email"]').type("test@email.com");
 
     cy.get('input[placeholder="Password"]').type("test123456");
