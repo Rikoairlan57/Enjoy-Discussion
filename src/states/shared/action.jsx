@@ -1,11 +1,9 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable no-alert */
 import { hideLoading, showLoading } from "react-redux-loading-bar";
 import NetworkData from "../../utils/network-data";
 import { receiveThreadsActionCreator } from "../thread/action";
 import { receiveUsersActionCreator } from "../users/action";
 
-function asyncPopulateUsersAndThreads() {
+const asyncPopulateUsersAndThreads = () => {
   return async (dispatch) => {
     dispatch(showLoading());
 
@@ -21,6 +19,6 @@ function asyncPopulateUsersAndThreads() {
 
     dispatch(hideLoading());
   };
-}
+};
 
 export { asyncPopulateUsersAndThreads };

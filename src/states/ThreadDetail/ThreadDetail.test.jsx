@@ -1,3 +1,14 @@
+// test scenarion for threadDetail
+
+// - threaddetailReducer function
+// - should return the initial state when given uknown action
+// - should return the threadDetail when given by RECEIVE_THREAD_DETAIL action
+// - should return the null when given by CLEAR_THREAD_DETAIL action
+// - should return the threadDetail with the toggle upvote thread when given by
+//   TOGGLE_UPVOTE_THREAD_DETAIL action
+// - should return the threadDetail with the toggle downvote thread when given by
+//   TOGGLE_DOWNVOTE_THREAD_DETAIL action
+
 import threadDetailReducer from "./reducer";
 
 describe("threadDetailReducer function", () => {

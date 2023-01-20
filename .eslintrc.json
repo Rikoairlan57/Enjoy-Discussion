@@ -26,6 +26,8 @@
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-no-useless-fragment": "off",
     "import/order": "off",
-    "no-undef": "off"
+    "no-undef": "off",
+    "no-alert": "off",
+    "import/prefer-default-export": "off"
   }
 }

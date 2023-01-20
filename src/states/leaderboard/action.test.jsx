@@ -1,3 +1,9 @@
+// scenario test for leaderboard recuder function
+
+// - leaderboardReducer function
+// - should return the initial state when given uknown action
+// - should return the leaderboards when given RECEIVE_LEADERBOARD action
+
 import { hideLoading, showLoading } from "react-redux-loading-bar";
 import api from "../../utils/network-data";
 import {
