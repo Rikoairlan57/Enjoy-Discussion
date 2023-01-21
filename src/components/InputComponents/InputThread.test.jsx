@@ -1,3 +1,12 @@
+// using arrange, action, assert techniques
+
+// scenario testing thread input in add thread page
+
+// - InputThread component
+// - handles typing the title inside the title input properly
+// - handles typing the category inside the category input properly
+// - handles typing the body content inside the body input properly
+
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";

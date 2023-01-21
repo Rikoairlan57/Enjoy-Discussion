@@ -12,7 +12,7 @@ const InputRegister = ({ register }) => {
         type="text"
         value={name}
         onChange={onNameChange}
-        placeholder="Name"
+        placeholder="Username"
         className=" w-full border relative bg-gray-100 p-2 my-4"
       />
       <input

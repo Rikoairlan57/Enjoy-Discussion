@@ -1,9 +1,18 @@
+// using arrange, action, assert techniques
+
+// scenario testing input in login page
+
+// - InputLogin component
+// - should properly handle email input on login page
+// - should properly handle password input on login page
+// - calls the login function when the login button is clicked
+
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import InputLogin from "./InputLogin";
 
-describe("LoginInput component", () => {
+describe("InputLogin component", () => {
   it("should handle email typing correctly", async () => {
     render(<InputLogin login={() => {}} />);
     const emailInput = await screen.getByPlaceholderText("Email");
