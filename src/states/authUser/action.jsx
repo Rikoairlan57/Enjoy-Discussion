@@ -1,5 +1,6 @@
 import { hideLoading, showLoading } from "react-redux-loading-bar";
 import NetworkData from "../../utils/network-data";
+import { message } from "antd";
 
 const ActionType = {
   SET_AUTH_USER: "SET_AUTH_USER",
@@ -35,7 +36,7 @@ function asyncSetAuthUser({ email, password }) {
 
       dispatch(setAuthUserActionCreator(authUser));
     } catch (error) {
-      alert(error.message);
+      message.error(error.message);
     }
 
     dispatch(hideLoading());

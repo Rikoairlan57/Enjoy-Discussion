@@ -1,4 +1,5 @@
 import NetworkData from "../../utils/network-data";
+import { message } from "antd";
 
 const ActionType = {
   RECEIVE_THREADS: "RECEIVE_THREADS",
@@ -52,7 +53,7 @@ function asyncAddThread({ title, body, category = "" }) {
       const thread = await NetworkData.createThread({ title, body, category });
       dispatch(addThreadActionCreator(thread));
     } catch (error) {
-      alert(error.message);
+      message.error(error.message);
     }
   };
 }
@@ -67,7 +68,7 @@ function asyncToggleUpVoteThread(threadId) {
     try {
       await NetworkData.upVoteThread(threadId);
     } catch (error) {
-      alert(error.message);
+      message.error(error.message);
       dispatch(
         toggleUpVoteThreadActionCreator({ threadId, userId: authUser.id })
       );
@@ -85,7 +86,7 @@ function asyncToggleDownVoteThread(threadId) {
     try {
       await NetworkData.downVoteThread(threadId);
     } catch (error) {
-      alert(error.message);
+      message.error(error.message);
       dispatch(
         toggleDownVoteThreadActionCreator({ threadId, userId: authUser.id })
       );
