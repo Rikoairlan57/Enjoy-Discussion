@@ -1,4 +1,5 @@
 /* eslint-disable no-alert */
+import { message } from "antd";
 import NetworkData from "../../utils/network-data";
 
 const ActionType = {
@@ -19,7 +20,7 @@ function asyncRegisterUser({ name, email, password }) {
     try {
       await NetworkData.register({ name, email, password });
     } catch (error) {
-      alert(error.message);
+      message.error(error.message);
     }
   };
 }

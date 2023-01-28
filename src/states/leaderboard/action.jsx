@@ -1,5 +1,6 @@
 import { hideLoading, showLoading } from "react-redux-loading-bar";
 import NetworkData from "../../utils/network-data";
+import { message } from "antd";
 
 const ActionType = {
   RECEIVE_LEADERBOARDS: "RECEIVE_LEADERBOARDS",
@@ -22,7 +23,7 @@ function asyncGetLeaderboards() {
       const leaderboards = await NetworkData.getLeaderboard();
       dispatch(receiveLeaderboardsActionCreator(leaderboards));
     } catch (error) {
-      alert(error.message);
+      message.error(error.message);
     }
 
     dispatch(hideLoading());
